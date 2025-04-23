@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: fltenant1 # kpt-set: ${tenant-name}
+  labels:
+    tenant-ns: "true"
+    # Allow Anthos Service Mesh to manage the workloads in the namespace
+    # Ref: https://cloud.google.com/service-mesh/docs/managed/select-a-release-channel#injection_labels
+    istio.io/rev: asm-managed

@@ -24,7 +24,9 @@ spec:
   hosts:
     - "*"
   tcp:
-    - route:
+    - match:
+        - port: 8083
+      route:
         - destination:
             host: demo-dev-task-assignment.fltenant1.svc.cluster.local
             port:

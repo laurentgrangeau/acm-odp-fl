@@ -28,6 +28,12 @@ spec:
         protocol: TCP
       hosts:
         - "*"
+    - port:
+        number: 8083
+        name: taport
+        protocol: TCP
+      hosts:
+        - "*"
 ---
 apiVersion: v1
 kind: Service
@@ -43,4 +49,8 @@ spec:
   - name: tmport
     port: 8082
     targetPort: 8082
+    protocol: TCP
+  - name: taport
+    port: 8083
+    targetPort: 8083
     protocol: TCP

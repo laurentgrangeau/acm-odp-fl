@@ -28,6 +28,7 @@ spec:
         - operation:
             ports:
               - "8082"
+              - "8083"
 ---
 # Allow traffic to cross device ports
 apiVersion: security.istio.io/v1beta1
@@ -45,3 +46,4 @@ spec:
         - operation:
             ports:
               - "8082"
+              - "8083"

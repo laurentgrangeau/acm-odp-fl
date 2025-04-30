@@ -23,7 +23,7 @@ spec:
     - istio-ingress/ingress-gateway-cross-device
   hosts:
     - "*"
-  http:
+  tcp:
     - route:
         - destination:
             host: demo-dev-task-management.fltenant1.svc.cluster.local

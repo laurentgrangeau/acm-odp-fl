@@ -25,9 +25,9 @@ spec:
     - "*"
   tcp:
     - match:
-        - port: 8083
+      - port: 8083
       route:
-        - destination:
-            host: demo-dev-task-assignment.fltenant1.svc.cluster.local
-            port:
-              number: 8083
+      - destination:
+          host: demo-dev-task-assignment.fltenant1.svc.cluster.local
+          port:
+            number: 8083

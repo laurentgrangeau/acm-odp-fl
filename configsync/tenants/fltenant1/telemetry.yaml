@@ -1,0 +1,13 @@
+apiVersion: telemetry.istio.io/v1alpha1
+kind: Telemetry
+metadata:
+  name: enable-envoy-and-sd-access-log
+  namespace: istio-system
+spec:
+  accessLogging:
+    - providers:
+        - name: envoy
+        - name: stackdriver
+  tracing:
+    - providers:
+        - name: stackdriver

@@ -12,15 +12,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 ---
-kind: NetworkLogging
-apiVersion: networking.gke.io/v1alpha1
+# Direct traffic from the ingress gateway to the server
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
 metadata:
-  name: default
+  name: ingress-gateway-cross-device-to-taskscheduler
+  namespace: istio-ingress
 spec:
-  cluster:
-    allow:
-      log: false
-      delegate: false
-    deny:
-      log: true
-      delegate: false
+  gateways:
+    - istio-ingress/ingress-gateway-cross-device
+  hosts:
+    - "*"
+  tcp:
+    - match:
+        - port: 8082
+      route:
+        - destination:
+            host: taskscheduler.fltenant1.svc.cluster.local
+            port:
+              number: 8082
+          weight: 100

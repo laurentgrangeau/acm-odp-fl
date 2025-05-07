@@ -15,7 +15,7 @@
 apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
 metadata:
-  name: cross-device-taskmanagement
+  name: cross-device-taskassignment
   namespace: fltenant1
 spec:
-  host: demo-dev-task-management.fltenant1.svc.cluster.local
+  host: taskassignment.fltenant1.svc.cluster.local
